@@ -11,7 +11,27 @@ config_version=4
 [application]
 
 config/name="Godot3_2Dterrain1"
+config/description="Mini Ballerburg Just 4 Fun"
+run/main_scene="res://TerrainLine.tscn"
+boot_splash/bg_color=Color( 0.109804, 0.372549, 0.47451, 1 )
 config/icon="res://icon.png"
+
+[debug]
+
+settings/stdout/print_fps=true
+gdscript/completion/autocomplete_setters_and_getters=true
+
+[display]
+
+window/size/width=1600
+window/size/height=900
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[node]
+
+name_num_separator=2
+name_casing=1
 
 [rendering]
 
