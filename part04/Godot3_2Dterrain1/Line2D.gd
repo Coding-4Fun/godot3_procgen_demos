@@ -1,13 +1,19 @@
 extends Line2D
 
-export var displacement = 100
+export var displacement = 180
 export var iterations = 5
-export var height = 250
+export var height = 300
 export var castlewidth = 175
-export var castleleft = 0
-export var castleright = 0
+export var castleleftpos = 0
+export var castlerightpos = 0
 export (float) var smooth = 1.1
 var current_displacement
+
+onready var castle = preload("res://Castle2d.tscn")
+onready var castleleft = castle.instance()
+onready var castleright = castle.instance()
+
+onready var root = get_parent()
 
 func _ready():
 	randomize()
@@ -27,6 +33,7 @@ func init_line():
 	for i in range(iterations):
 		add_points()
 	set_point_position(0,Vector2(0,start.y))
+	
 	set_point_position(1,Vector2(start.x,start.y))
 	add_point(Vector2(screensize.x, end.y))
 	var p = points
@@ -48,3 +55,15 @@ func add_points():
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		init_line()	
+		add_Castles()
+		
+		
+func add_Castles():
+	castleleft.position = points[0]
+	castleleft.modulate = Color.red
+	
+	castleright.position = points[points.size()-2]
+	castleright.modulate = Color.green
+	
+	root.add_child(castleleft)
+	root.add_child(castleright)
