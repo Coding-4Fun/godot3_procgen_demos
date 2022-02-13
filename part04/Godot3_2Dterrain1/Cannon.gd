@@ -10,6 +10,7 @@ var can_shoot = true
 onready var Bullet = preload("res://Cannonball.tscn")
 onready var Muzzle = get_node("Barrel/Muzzle")
 onready var Barrel = get_node("Barrel")
+onready var Main = get_tree().get_root().get_node("MainGame")
 
 
 func _ready():
@@ -19,7 +20,10 @@ func _ready():
 func _unhandled_input(event):
 	if event.is_action_released("cannon_shoot") and can_shoot:
 		var b = Bullet.instance()   
-		get_tree().get_root().add_child(b)
+		
+		
+		Main.add_child(b)
+		b.connect("exploded", Main, "_on_Bullet_exploded")
 		b.transform = Muzzle.global_transform
 		b.velocity = b.transform.x * muzzle_velocity
 		b.g = gravity
