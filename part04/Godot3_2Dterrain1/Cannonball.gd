@@ -2,7 +2,8 @@ extends Area2D
 
 signal exploded
 
-var velocity = Vector2.ZERO #(350, 0)
+var velocity = Vector2.ZERO
+export var P1 = 1
 onready var screensize = get_viewport().get_visible_rect().size
 
 var g = 150
@@ -16,12 +17,6 @@ func _process(delta):
 		queue_free()
 	if position.x > screensize.x+100:
 		queue_free()
-
-#	position += transform.x * velocity * delta
-
-	
-func _on_BallisticBullet_body_entered(_body):
-	pass # Replace with function body.
 
 
 func _on_Cannonball_body_entered(_body):
