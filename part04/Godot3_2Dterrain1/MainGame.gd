@@ -2,18 +2,23 @@ extends Node2D
 
 onready var TerrainLine = $"TerrainLine"
 
-onready var castle = preload("res://Castle2d.tscn")
-onready var castleleft = castle.instance()
-onready var castleright = castle.instance()
+onready var Players = $Players
+onready var PlayerLeft = $Players/Player1
+onready var PlayerRight = $Players/Player2
+
+#onready var castle = preload("res://Castle2d.tscn")
+#onready var castleleft = castle.instance()
+#onready var castleright = castle.instance()
 
 onready var cannon = preload("res://Cannon.tscn")
+
 onready var cannonLeft = cannon.instance()
 onready var cannonBarrelLeft = cannonLeft.get_node("Barrel")
 onready var cannonBarrelLeftMuzzle = cannonBarrelLeft.get_node("Muzzle")
 
-onready var cannonRight = cannon.instance()
-onready var cannonBarrelRight = cannonRight.get_node("Barrel")
-onready var cannonBarrelRightMuzzle = cannonBarrelRight.get_node("Muzzle")
+#onready var cannonRight = cannon.instance()
+#onready var cannonBarrelRight = cannonRight.get_node("Barrel")
+#onready var cannonBarrelRightMuzzle = cannonBarrelRight.get_node("Muzzle")
 
 onready var line = $TrajectoryLine
 
@@ -27,7 +32,7 @@ func _ready():
 func add_cannon_left():
 	cannonLeft.position = TerrainLine.points[0]
 	cannonLeft.position.x = TerrainLine.castlewidth / 2
-	add_child(cannonLeft)
+	PlayerLeft.add_child(cannonLeft)
 #	pass
 
 func update_trajectory():
@@ -43,14 +48,14 @@ func update_trajectory():
 	pass
 
 func add_Castles():
-	castleleft.position = TerrainLine.points[0]
-	castleleft.modulate = Color.red
-	
-	castleright.position = TerrainLine.points[TerrainLine.points.size()-2]
-	castleright.modulate = Color.green
-	
-	add_child(castleleft)
-	add_child(castleright)
-
+#	castleleft.position = TerrainLine.points[0]
+#	castleleft.modulate = Color.red
+#
+#	castleright.position = TerrainLine.points[TerrainLine.points.size()-2]
+#	castleright.modulate = Color.green
+#
+#	add_child(castleleft)
+#	add_child(castleright)
+	pass
 
 
