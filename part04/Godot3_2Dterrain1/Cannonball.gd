@@ -12,7 +12,9 @@ func _process(delta):
 	rotation = velocity.angle()
 	position += velocity * delta
 	
-	if position.y > screensize.y+1000:
+	if position.y > screensize.y+100:
+		queue_free()
+	if position.x > screensize.x+100:
 		queue_free()
 
 #	position += transform.x * velocity * delta
