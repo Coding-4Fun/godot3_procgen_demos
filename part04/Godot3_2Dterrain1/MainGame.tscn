@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://TerrainLine.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MainGame.gd" type="Script" id=2]
+[ext_resource path="res://InGameUI.tscn" type="PackedScene" id=3]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource( 2 )
@@ -17,3 +18,21 @@ points = PoolVector2Array(  )
 [node name="Player1" type="Node2D" parent="Players"]
 
 [node name="Player2" type="Node2D" parent="Players"]
+
+[node name="InGameUI" parent="." instance=ExtResource( 3 )]
+anchor_top = 1.0
+anchor_right = 0.0
+
+[node name="IngameUIBottom" parent="InGameUI" index="0"]
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 0.0
+margin_right = 128.0
+margin_bottom = 14.0
+
+[node name="vBoxContainer" parent="InGameUI/IngameUIBottom" index="0"]
+margin_right = 128.0
+margin_bottom = 32.0
+
+[editable path="InGameUI"]
