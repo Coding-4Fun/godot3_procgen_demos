@@ -21,6 +21,7 @@ onready var cannonBarrelLeftMuzzle = cannonBarrelLeft.get_node("Muzzle")
 #onready var cannonBarrelRightMuzzle = cannonBarrelRight.get_node("Muzzle")
 
 onready var line = $TrajectoryLine
+var Explosion = preload("res://Explosion.tscn")
 
 
 func _ready():
@@ -46,6 +47,15 @@ func update_trajectory():
 #		if p.y > $Ground.position.y - 25:
 #			break
 	pass
+
+
+func _on_Bullet_exploded(pos):
+	var e = Explosion.instance()
+	add_child(e)
+	e.position = pos
+#	tank.can_shoot = true
+#	line.hide()
+
 
 func add_Castles():
 #	castleleft.position = TerrainLine.points[0]
