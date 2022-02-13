@@ -2,7 +2,7 @@ extends Node2D
 
 export var left:bool = true
 
-export var muzzle_velocity = 3500
+export var muzzle_velocity = 1500
 export var gravity = 250
 
 var can_shoot = true
@@ -34,11 +34,3 @@ func _process(_delta):
 	if can_shoot:
 		Barrel.look_at(get_global_mouse_position())
 		Barrel.rotation_degrees = clamp(Barrel.rotation_degrees, -75, -15)
-
-
-#func shoot():
-#    var b = Bullet.instance()
-#    owner.add_child(b)
-#    b.transform = $Barrel/Position2D.global_transform
-#    b.velocity = b.transform.x * muzzle_velocity
-#    b.gravity = gravity
