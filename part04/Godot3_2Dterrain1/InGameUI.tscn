@@ -1,0 +1,58 @@
+[gd_scene format=2]
+
+[node name="InGameUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IngameUIBottom" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -123.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vBoxContainer" type="VBoxContainer" parent="IngameUIBottom"]
+margin_right = 1600.0
+margin_bottom = 123.0
+
+[node name="hBoxContainer" type="HBoxContainer" parent="IngameUIBottom/vBoxContainer"]
+margin_right = 128.0
+margin_bottom = 14.0
+size_flags_horizontal = 2
+
+[node name="label" type="Label" parent="IngameUIBottom/vBoxContainer/hBoxContainer"]
+margin_right = 52.0
+margin_bottom = 14.0
+size_flags_vertical = 0
+text = "Winkel: "
+
+[node name="labAngel" type="Label" parent="IngameUIBottom/vBoxContainer/hBoxContainer"]
+margin_left = 56.0
+margin_right = 128.0
+margin_bottom = 14.0
+size_flags_vertical = 0
+text = "123456789"
+
+[node name="hBoxContainer_2" type="HBoxContainer" parent="IngameUIBottom/vBoxContainer"]
+margin_top = 18.0
+margin_right = 119.0
+margin_bottom = 32.0
+size_flags_horizontal = 2
+
+[node name="label" type="Label" parent="IngameUIBottom/vBoxContainer/hBoxContainer_2"]
+margin_right = 43.0
+margin_bottom = 14.0
+size_flags_vertical = 0
+text = "Power:"
+
+[node name="labPower" type="Label" parent="IngameUIBottom/vBoxContainer/hBoxContainer_2"]
+margin_left = 47.0
+margin_right = 119.0
+margin_bottom = 14.0
+size_flags_vertical = 0
+text = "123456789"
