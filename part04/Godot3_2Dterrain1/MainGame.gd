@@ -23,11 +23,15 @@ onready var cannonBarrelLeftMuzzle = cannonBarrelLeft.get_node("Muzzle")
 onready var line = $TrajectoryLine
 var Explosion = preload("res://Explosion.tscn")
 
+var Dummy = preload("res://DummyTarget.tscn")
+
 
 func _ready():
 	TerrainLine.init_line()
 	#add_Castles()
 	add_cannon_left()
+	
+	add_targetdummys()
 
 
 func add_cannon_left():
@@ -35,6 +39,16 @@ func add_cannon_left():
 	cannonLeft.position.x = TerrainLine.castlewidth / 2
 	PlayerLeft.add_child(cannonLeft)
 #	pass
+
+
+func add_targetdummys():
+	for i in TerrainLine.points.size()-3:
+		if pow(-1.0, randi() % 2) == 1:
+			var t = Dummy.instance()
+			t.position = TerrainLine.points[i+2]
+			t.global_transform.scaled(Vector2(0.2,0.2))
+			add_child(t)
+
 
 func update_trajectory():
 #	line.clear_points()
