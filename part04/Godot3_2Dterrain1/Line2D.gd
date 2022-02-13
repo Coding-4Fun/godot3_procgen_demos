@@ -9,13 +9,13 @@ export var castlerightpos = 0
 export (float) var smooth = 1.1
 var current_displacement
 
-
+onready var colli = $Terrain/TerrainCollision
 
 onready var root = get_parent()
 
 func _ready():
 	randomize()
-	$Polygon2D.color = default_color
+	$Terrain/TerrainPoly.color = default_color
 #	init_line()
 	
 	
@@ -45,7 +45,9 @@ func init_line():
 	var p = points
 	p.append(Vector2(screensize.x, screensize.y))
 	p.append(Vector2(0, screensize.y))
-	$Polygon2D.polygon = p
+	$Terrain/TerrainPoly.polygon = p
+	
+	colli.polygon = p
 	
 func add_points():
 	var old_points = points
