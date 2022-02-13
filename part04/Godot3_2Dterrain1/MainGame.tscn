@@ -9,6 +9,11 @@ script = ExtResource( 2 )
 [node name="TrajectoryLine" type="Line2D" parent="."]
 
 [node name="TerrainLine" parent="." instance=ExtResource( 1 )]
-visible = false
 z_index = 1
 points = PoolVector2Array(  )
+
+[node name="Players" type="Node2D" parent="."]
+
+[node name="Player1" type="Node2D" parent="Players"]
+
+[node name="Player2" type="Node2D" parent="Players"]
