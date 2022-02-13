@@ -20,3 +20,6 @@ __pycache__
 .DS_Store
 .idea
 logs/
+*.7z
+*.zip
+/part04/Godot3_2Dterrain1/.Export/
