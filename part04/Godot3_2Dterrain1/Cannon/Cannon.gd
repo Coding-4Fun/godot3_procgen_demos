@@ -2,6 +2,7 @@ extends Node2D
 
 signal CannonPowerChange
 signal CannonAngelChange
+signal CannonShoot
 
 
 export var left:bool = true
@@ -32,6 +33,7 @@ func _unhandled_input(event):
 		b.transform = Muzzle.global_transform
 		b.velocity = b.transform.x * muzzle_velocity
 		b.g = gravity
+		emit_signal("CannonShoot")
 	if event.is_action_released("cannon_power_plus"):
 		muzzle_velocity = clamp(muzzle_velocity+100, 1500, 6000)
 		emit_signal("CannonPowerChange", muzzle_velocity)

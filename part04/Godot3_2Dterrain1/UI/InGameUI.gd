@@ -2,7 +2,10 @@ extends Control
 
 ## Handle Signals for UI Updates
 
+var _shots : int = 0
+
 func _ready() -> void:
+	$IngameUIBottom/vBoxContainer/hBoxShots/labShots.text = str(_shots)
 	pass
 
 
@@ -16,3 +19,8 @@ func _on_Cannon_CannonAngelChange(newPower : int) -> void:
 func _on_Cannon_CannonPowerChange(newAngel : int) -> void:
 	$IngameUIBottom/vBoxContainer/hBoxPower/labPower.text = str(newAngel)
 	pass
+
+
+func _on_Cannon_Shot() -> void:
+	_shots += 1
+	$IngameUIBottom/vBoxContainer/hBoxShots/labShots.text = str(_shots)

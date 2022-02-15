@@ -30,6 +30,7 @@ var Dummy = preload("res://DummyTarget/DummyTarget.tscn")
 func _ready():
 	cannonLeft.connect("CannonAngelChange", UIMain, "_on_Cannon_CannonAngelChange")
 	cannonLeft.connect("CannonPowerChange", UIMain, "_on_Cannon_CannonPowerChange")
+	cannonLeft.connect("CannonShoot", UIMain, "_on_Cannon_Shot")
 	pass
 
 
