@@ -33,6 +33,33 @@ margin_bottom = 14.0
 
 [node name="vBoxContainer" parent="InGameUI/IngameUIBottom" index="0"]
 margin_right = 128.0
-margin_bottom = 32.0
+margin_bottom = 14.0
+
+[node name="hBoxContainer" parent="InGameUI/IngameUIBottom/vBoxContainer" index="0"]
+margin_right = 21.0
+margin_bottom = 2.0
+
+[node name="label" parent="InGameUI/IngameUIBottom/vBoxContainer/hBoxContainer" index="0"]
+margin_right = 8.0
+margin_bottom = 2.0
+
+[node name="labAngel" parent="InGameUI/IngameUIBottom/vBoxContainer/hBoxContainer" index="1"]
+margin_left = 12.0
+margin_right = 21.0
+margin_bottom = 2.0
+
+[node name="hBoxContainer_2" parent="InGameUI/IngameUIBottom/vBoxContainer" index="1"]
+margin_top = 6.0
+margin_right = 19.0
+margin_bottom = 8.0
+
+[node name="label" parent="InGameUI/IngameUIBottom/vBoxContainer/hBoxContainer_2" index="0"]
+margin_right = 6.0
+margin_bottom = 2.0
+
+[node name="labPower" parent="InGameUI/IngameUIBottom/vBoxContainer/hBoxContainer_2" index="1"]
+margin_left = 10.0
+margin_right = 19.0
+margin_bottom = 2.0
 
 [editable path="InGameUI"]
