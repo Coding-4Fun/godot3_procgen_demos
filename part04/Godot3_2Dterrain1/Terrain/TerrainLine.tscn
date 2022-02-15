@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Line2D.gd" type="Script" id=1]
+[ext_resource path="res://Terrain/Line2D.gd" type="Script" id=1]
 
 [node name="TerrainLine" type="Line2D"]
 points = PoolVector2Array( 265.095, 383.505, 543.055, 251.963, 651.89, 412.475 )

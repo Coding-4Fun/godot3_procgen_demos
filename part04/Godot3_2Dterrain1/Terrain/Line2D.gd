@@ -17,13 +17,13 @@ func _ready():
 	randomize()
 	$Terrain/TerrainPoly.color = default_color
 #	init_line()
-	
-	
+
+
 func init_line():
 	current_displacement = displacement
 	var screensize = get_viewport().get_visible_rect().size
 	points = PoolVector2Array()
-	
+
 	var start = Vector2(castlewidth, rand_range(height-displacement,
 								height+displacement))
 	var end = Vector2(screensize.x-castlewidth, rand_range(height-displacement,
@@ -35,20 +35,20 @@ func init_line():
 
 ## Plattform Links
 	set_point_position(0,Vector2(0,start.y))
-	
+
 	set_point_position(1,Vector2(start.x,start.y))
 
 ## Plattform rechts
 	add_point(Vector2(screensize.x, end.y))
-	
-	
+
+
 	var p = points
 	p.append(Vector2(screensize.x, screensize.y))
 	p.append(Vector2(0, screensize.y))
 	$Terrain/TerrainPoly.polygon = p
-	
+
 	colli.polygon = p
-	
+
 func add_points():
 	var old_points = points
 	points = PoolVector2Array()
@@ -59,13 +59,13 @@ func add_points():
 		add_point(midpoint)
 	add_point(old_points[old_points.size() - 1])
 	current_displacement *= pow(2.0, -smooth)
-		
+
 #func _input(event):
 #	if event is InputEventMouseButton and event.pressed:
-#		init_line()	
+#		init_line()
 #		add_Castles()
-		
-		
+
+
 #func add_Castles():
 #	castleleft.position = points[0]
 #	castleleft.modulate = Color.red
