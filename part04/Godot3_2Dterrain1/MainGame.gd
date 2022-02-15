@@ -27,27 +27,37 @@ var Dummy = preload("res://DummyTarget/DummyTarget.tscn")
 
 
 func _ready():
-#	TerrainLine.init_line()
-	#add_Castles()
-	add_cannon_left()
-
-	add_targetdummys()
+	pass
 
 
 func add_cannon_left():
 	cannonLeft.position = TerrainLine.points[0]
 	cannonLeft.position.x = TerrainLine.castlewidth / 2
 	PlayerLeft.add_child(cannonLeft)
-#	pass
 
 
-func add_targetdummys():
-	for i in TerrainLine.points.size()-3:
-		if pow(-1.0, randi() % 2) == 1:
-			var t = Dummy.instance()
-			t.position = TerrainLine.points[i+2]
-			t.get_transform().scaled(Vector2(0.2,0.2))
-			add_child(t)
+func add_DummyTarget():
+	print("Terrain Poins : " + str(TerrainLine.points.size()))
+	if TerrainLine.points.size() < 5:
+		pass
+	randomize()
+	var tlSize = TerrainLine.points.size() -3
+	var rmin : float = 2
+	var rmax = tlSize
+
+	var i = rand_range(rmin, rmax)
+	var t = Dummy.instance()
+	t.position = TerrainLine.points[int(i)]
+	t.get_transform().scaled(Vector2(0.2,0.2))
+	t.connect("Hit", self, "_on_Dummy_Hited")
+	call_deferred("add_child", t)
+
+#	for i in TerrainLine.points.size()-3:
+#		if pow(-1.0, randi() % 2) == 1:
+#			var t = Dummy.instance()
+#			t.position = TerrainLine.points[i+2]
+#			t.get_transform().scaled(Vector2(0.2,0.2))
+#			add_child(t)
 
 
 func update_trajectory():
@@ -83,3 +93,20 @@ func add_Castles():
 	pass
 
 
+func _on_TerrainLine_ready() -> void:
+#	print("Line2d Meldet Ready")
+#	add_cannon_left()
+	pass
+
+
+func _on_MainGame_ready() -> void:
+	add_cannon_left()
+	add_DummyTarget()
+
+
+func _on_Dummy_Hited():
+	add_DummyTarget()
+
+
+func _on_TerrainLine_tree_entered() -> void:
+	pass
