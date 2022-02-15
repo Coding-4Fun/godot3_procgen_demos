@@ -1,5 +1,9 @@
 extends Node2D
 
+signal CannonPowerChange
+signal CannonAngelChange
+
+
 export var left:bool = true
 
 export var muzzle_velocity = 1500
@@ -30,8 +34,10 @@ func _unhandled_input(event):
 		b.g = gravity
 	if event.is_action_released("cannon_power_plus"):
 		muzzle_velocity = clamp(muzzle_velocity+100, 1500, 6000)
+		emit_signal("CannonPowerChange", muzzle_velocity)
 	if event.is_action_released("cannon_power_minus"):
 		muzzle_velocity = clamp(muzzle_velocity-100, 1500, 6000)
+		emit_signal("CannonPowerChange", muzzle_velocity)
 #		can_shoot = false
 
 
@@ -39,5 +45,4 @@ func _process(_delta):
 	if can_shoot:
 		Barrel.look_at(get_global_mouse_position())
 		Barrel.rotation_degrees = clamp(Barrel.rotation_degrees, -75, -15)
-		labAngel.text = str(Barrel.rotation_degrees)
-		labPower.text = str(muzzle_velocity)
+		emit_signal("CannonAngelChange", Barrel.rotation_degrees)
