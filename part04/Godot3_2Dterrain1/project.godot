@@ -30,8 +30,8 @@ window/stretch/aspect="keep"
 
 [gui]
 
-theme/custom="res://Theme/main_theme.tres"
-theme/custom_font="res://Theme/main_font.tres"
+theme/custom="res://UI/Theme/main_theme.tres"
+theme/custom_font="res://UI/Theme/main_font.tres"
 
 [importer_defaults]
 
