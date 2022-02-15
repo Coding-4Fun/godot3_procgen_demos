@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tank_explosion4.png-437a24f3d5226fc90e212fdfadd90082.stex"
+path="res://.import/tank_explosion2.png-66b7a0ef0daf51872b7016d1459e2e25.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tank_explosion4.png"
-dest_files=[ "res://.import/tank_explosion4.png-437a24f3d5226fc90e212fdfadd90082.stex" ]
+source_file="res://CannonBall/tank_explosion2.png"
+dest_files=[ "res://.import/tank_explosion2.png-66b7a0ef0daf51872b7016d1459e2e25.stex" ]
 
 [params]
 
