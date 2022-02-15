@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/black-cannon-barrel.png-1d1207293f8c7b4e7b011b73d5d15e14.stex"
+path="res://.import/black-cannon-barrel.png-c0b344cdaa646329d31fcfc3722a0fad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://black-cannon-barrel.png"
-dest_files=[ "res://.import/black-cannon-barrel.png-1d1207293f8c7b4e7b011b73d5d15e14.stex" ]
+source_file="res://Cannon/black-cannon-barrel.png"
+dest_files=[ "res://.import/black-cannon-barrel.png-c0b344cdaa646329d31fcfc3722a0fad.stex" ]
 
 [params]
 
