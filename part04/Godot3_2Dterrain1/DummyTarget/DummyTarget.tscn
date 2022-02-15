@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Theme/OpenSansRegular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://DummyTarget/DummyTarget.png" type="Texture" id=2]
+[ext_resource path="res://DummyTarget/DummyTarget.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -19,6 +20,7 @@ height = 398.0
 [node name="DummyTarget" type="StaticBody2D" groups=["Dummy"]]
 scale = Vector2( 0.2, 0.2 )
 z_index = 5
+script = ExtResource( 3 )
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( 2, 5.99994 )
