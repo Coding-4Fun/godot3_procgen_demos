@@ -7,7 +7,7 @@ export var gravity = 250
 
 var can_shoot = true
 
-onready var Bullet = preload("res://CannonBall/Cannonball.tscn")
+onready var Bullet = preload("res://Cannonball.tscn")
 onready var Muzzle = get_node("Barrel/Muzzle")
 onready var Barrel = get_node("Barrel")
 onready var Main = get_tree().get_root().get_node("MainGame")
