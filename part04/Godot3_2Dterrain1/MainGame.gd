@@ -1,5 +1,7 @@
 extends Node2D
 
+signal UIScoreChange
+
 onready var TerrainLine = $"TerrainLine"
 
 onready var Players = $Players
@@ -31,6 +33,7 @@ func _ready():
 	cannonLeft.connect("CannonAngelChange", UIMain, "_on_Cannon_CannonAngelChange")
 	cannonLeft.connect("CannonPowerChange", UIMain, "_on_Cannon_CannonPowerChange")
 	cannonLeft.connect("CannonShoot", UIMain, "_on_Cannon_Shot")
+	connect("UIScoreChange", UIMain, "_on_UIScore_Change")
 	pass
 
 
@@ -109,6 +112,7 @@ func _on_MainGame_ready() -> void:
 
 
 func _on_Dummy_Hited(score : int) -> void:
+	emit_signal("UIScoreChange", score)
 	add_DummyTarget()
 
 
