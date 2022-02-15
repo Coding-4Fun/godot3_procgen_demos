@@ -20,13 +20,16 @@ onready var cannonBarrelLeftMuzzle = cannonBarrelLeft.get_node("Muzzle")
 #onready var cannonBarrelRight = cannonRight.get_node("Barrel")
 #onready var cannonBarrelRightMuzzle = cannonBarrelRight.get_node("Muzzle")
 
+onready var UIMain = $InGameUI
+
 onready var line = $TrajectoryLine
 var Explosion = preload("res://CannonBall/Explosion.tscn")
-
 var Dummy = preload("res://DummyTarget/DummyTarget.tscn")
 
 
 func _ready():
+	cannonLeft.connect("CannonAngelChange", UIMain, "_on_Cannon_CannonAngelChange")
+	cannonLeft.connect("CannonPowerChange", UIMain, "_on_Cannon_CannonPowerChange")
 	pass
 
 
@@ -37,7 +40,6 @@ func add_cannon_left():
 
 
 func add_DummyTarget():
-	print("Terrain Poins : " + str(TerrainLine.points.size()))
 	if TerrainLine.points.size() < 5:
 		pass
 	randomize()
@@ -48,6 +50,7 @@ func add_DummyTarget():
 	var i = rand_range(rmin, rmax)
 	var t = Dummy.instance()
 	t.position = TerrainLine.points[int(i)]
+	t.score += int(i)
 	t.get_transform().scaled(Vector2(0.2,0.2))
 	t.connect("Hit", self, "_on_Dummy_Hited")
 	call_deferred("add_child", t)
@@ -104,7 +107,7 @@ func _on_MainGame_ready() -> void:
 	add_DummyTarget()
 
 
-func _on_Dummy_Hited():
+func _on_Dummy_Hited(score : int) -> void:
 	add_DummyTarget()
 
 
