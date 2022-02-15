@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TowerNoDoor.png-815bb3e4e054ca8dc1eae40fc00296d8.stex"
+path="res://.import/TowerNoDoor.png-7541553e7fc1a1b51ae91329f890bbcb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TowerNoDoor.png"
-dest_files=[ "res://.import/TowerNoDoor.png-815bb3e4e054ca8dc1eae40fc00296d8.stex" ]
+source_file="res://Castle/TowerNoDoor.png"
+dest_files=[ "res://.import/TowerNoDoor.png-7541553e7fc1a1b51ae91329f890bbcb.stex" ]
 
 [params]
 
