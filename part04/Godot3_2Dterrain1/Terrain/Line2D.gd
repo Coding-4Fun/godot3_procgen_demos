@@ -16,7 +16,7 @@ onready var root = get_parent()
 func _ready():
 	randomize()
 	$Terrain/TerrainPoly.color = default_color
-#	init_line()
+	init_line()
 
 
 func init_line():

@@ -27,7 +27,7 @@ var Dummy = preload("res://DummyTarget/DummyTarget.tscn")
 
 
 func _ready():
-	TerrainLine.init_line()
+#	TerrainLine.init_line()
 	#add_Castles()
 	add_cannon_left()
 
@@ -46,7 +46,7 @@ func add_targetdummys():
 		if pow(-1.0, randi() % 2) == 1:
 			var t = Dummy.instance()
 			t.position = TerrainLine.points[i+2]
-			t.global_transform.scaled(Vector2(0.2,0.2))
+			t.get_transform().scaled(Vector2(0.2,0.2))
 			add_child(t)
 
 
