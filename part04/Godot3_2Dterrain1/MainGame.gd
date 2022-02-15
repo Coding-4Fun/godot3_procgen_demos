@@ -10,7 +10,7 @@ onready var PlayerRight = $Players/Player2
 #onready var castleleft = castle.instance()
 #onready var castleright = castle.instance()
 
-onready var cannon = preload("res://Cannon.tscn")
+onready var cannon = preload("res://Cannon/Cannon.tscn")
 
 onready var cannonLeft = cannon.instance()
 onready var cannonBarrelLeft = cannonLeft.get_node("Barrel")
@@ -21,16 +21,16 @@ onready var cannonBarrelLeftMuzzle = cannonBarrelLeft.get_node("Muzzle")
 #onready var cannonBarrelRightMuzzle = cannonBarrelRight.get_node("Muzzle")
 
 onready var line = $TrajectoryLine
-var Explosion = preload("res://Explosion.tscn")
+var Explosion = preload("res://CannonBall/Explosion.tscn")
 
-var Dummy = preload("res://DummyTarget.tscn")
+var Dummy = preload("res://DummyTarget/DummyTarget.tscn")
 
 
 func _ready():
 	TerrainLine.init_line()
 	#add_Castles()
 	add_cannon_left()
-	
+
 	add_targetdummys()
 
 
